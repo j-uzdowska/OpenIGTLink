@@ -1,7 +1,7 @@
 /*=========================================================================
 
   Program:   The OpenIGTLink Library
-  Language:  C++
+  Language:   C++
   Web page:  http://openigtlink.org/
 
   Copyright (c) Insight Software Consortium. All rights reserved.
