@@ -16,6 +16,7 @@ if (${OpenIGTLink_PROTOCOL_VERSION} GREATER 1)
     ${EXAMPLE_DIRS}
     ImageMeta
     Point
+    Laboratorium
     TrackingData
     QuaternionTrackingData
     ImageDatabaseServer

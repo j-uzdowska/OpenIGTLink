@@ -383,6 +383,14 @@ int ReceivePoint(igtl::Socket * socket, igtl::MessageHeader * header)
       std::cerr << " Radius    : " << std::fixed << pointElement->GetRadius() << std::endl;
       std::cerr << " Owner     : " << pointElement->GetOwner() << std::endl;
       std::cerr << "================================" << std::endl;
+
+igtl::PointMessage::Pointer pointMsg;
+  pointMsg = igtl::PointMessage::New();
+  pointMsg->SetDeviceName("PointSender");
+ pointMsg->AddPointElement(pointElement);
+pointMsg->Pack();
+socket->Send(pointMsg->GetPackPointer(), pointMsg->GetPackSize());
+
       }
     }
 
