@@ -146,6 +146,7 @@ int main(int argc, char* argv[])
         else if (strcmp(headerMsg->GetDeviceType(), "POINT") == 0)
           {
           ReceivePoint(socket, headerMsg);
+ 
           }
         else if (strcmp(headerMsg->GetDeviceType(), "TRAJ") == 0)
           {
@@ -387,6 +388,8 @@ int ReceivePoint(igtl::Socket * socket, igtl::MessageHeader * header)
 igtl::PointMessage::Pointer pointMsg;
   pointMsg = igtl::PointMessage::New();
   pointMsg->SetDeviceName("PointSender");
+pointElement->SetPosition(-1*pos[0], -1*pos[1], -1*pos[2]);
+
  pointMsg->AddPointElement(pointElement);
 pointMsg->Pack();
 socket->Send(pointMsg->GetPackPointer(), pointMsg->GetPackSize());
