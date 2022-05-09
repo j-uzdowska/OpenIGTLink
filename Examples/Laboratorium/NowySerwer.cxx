@@ -146,7 +146,8 @@ int main(int argc, char* argv[])
         else if (strcmp(headerMsg->GetDeviceType(), "POINT") == 0)
           {
           ReceivePoint(socket, headerMsg);
- 
+          socket->CloseSocket();
+          socket->UnRegister();
           }
         else if (strcmp(headerMsg->GetDeviceType(), "TRAJ") == 0)
           {
